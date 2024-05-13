@@ -1,2 +1,9 @@
 # Leaflet-Challenge
 Challenge 15
+## Part 1: Create the Earthquake Visualization
+- Start with defining map options and creates a Leaflet map object with the ID 'map' and sets the center as Los Angeles with zoom level of 4.5 (L.map('map').setView([34.052235, -118.243683], 4.5)).
+- Add a tile layer from OpenStreetMap to the map (add map tiles). The placeholders are replaced with actual values when fetching tiles. Stack Overflow Question: Open Street Maps default tiles (Leaflet) (https://stackoverflow.com/questions/62571474/open-street-maps-default-tiles-leaflet).
+- Functions for marker size and color: getMarkerSize(magnitude) takes the earthquake magnitude as input and returns a marker size corresponds to it while getMarkerColor(depth) takes the earthquake depth as input and returns a marker color based on the depth ranges.
+- createPopup(feature) takes GeoJSON feature object object representing an earthquake as input and returns HTML content for a popup. It includes earthquake place, magnitude and depth (rubric asks to include these three features in the tooltip).
+- Fetch earthquake data using D3 and add markers to the map (I selected 'All Earthquakes" in the past 7 days). It loops through each earthquake feature in the GeoJSON data and extract relevant information.
+- Add a legend: Create a Leaflet control object for the legend and specifies its position at the bottom right corner (var legend = L.control({position: 'bottomright'}). legend.onAdd = function (map) {...} includes styling and information of the legend (mine is created against the sample provided in the sample screenshot). Based on the conditional code for the depth, the last color (red) would not show up so an additional script is created to include it in the legend. Stack Overflow Question: Edit the height of the background-color of span / inline text (https://stackoverflow.com/questions/45172948/edit-the-height-of-the-background-color-of-span-inline-text).
